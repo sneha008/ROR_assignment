@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require turbolinks
+//= require jquery_ujs
+//= require twitter/bootstrap
+//= require highcharts
+//= require wice_grid
 //= require_tree .
+

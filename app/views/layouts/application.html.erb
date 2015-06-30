@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+    <%#= render 'layouts/navigation' %>
+    
+    <div class="navbar navbar-fixed-top">
+    	<div class="navbar-inner">
+    		<div class="container">
+    			<h4> Target Status </h4>
+    		</div>
+    	</div>
+    </div>
+</header>
 
-<%= yield %>
-
+<main role="main">
+	<div class="container">
+		<%= yield %>
+	</div>
+</main>
 </body>
 </html>

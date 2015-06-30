@@ -1,0 +1,16 @@
+<%= define_grid(@targets_grid, :hide_reset_button => true) do |g|
+
+  g.column :name => "Hostname", :attribute => "hostname", :model => "Target" do |target|
+    target.hostname
+  end
+
+  g.column :name => "Address", :attribute => "address", :model => "Target" do |target|
+    target.address
+  end
+
+  g.column :name => "Appliance", :attribute => "name", :model => "Appliance" do |target|
+    target.appliance.name
+  end
+
+end %>
+

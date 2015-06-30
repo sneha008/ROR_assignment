@@ -1,0 +1,59 @@
+<!-- <h2>Sneha</h2> -->
+
+<%# @targets.each do |target|%>
+	<%#= target.hostname %>
+	<%#= target.address %><br/>
+<%# end %>
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "Status",
+            colorByPoint: true,
+            data: [{
+                name: "Reachable",
+                y: 55.6,
+                selected: true
+            }, {
+                name: "Unreachable",
+                y: 24.030000000000005
+                // sliced: true
+            }]
+        }]
+    });
+});
+</script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+<br/>
+<h4 class="text-center">Target List</h4>
+<%= render :partial => "targets_list" %>
+<%= render_grid(@targets_grid)%>

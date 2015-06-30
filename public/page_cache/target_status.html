@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApplianceApi</title>
+  <link data-turbolinks-track="true" href="/assets/bootstrap-responsive.min.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/bootstrap.min.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/custom.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/wice_grid.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/application.css?body=1" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/transition.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/alert.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/modal.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/dropdown.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/scrollspy.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/tab.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/tooltip.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/popover.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/button.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/collapse.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/carousel.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/affix.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/highcharts.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/wice_grid_processor.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/wice_grid_init.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/wice_grid_saved_queries_init.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/wice_grid.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/bootstrap.min.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/application.js?body=1"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="vs2v2s2IFNSJDTwq4l/IT6wetATg9SXxMRMrT4cC5EQ=" name="csrf-token" />
+</head>
+<body>
+<header>
+    
+    <div class="navbar navbar-fixed-top">
+    	<div class="navbar-inner">
+    		<div class="container">
+    			<h4> Target Status </h4>
+    		</div>
+    	</div>
+    </div>
+</header>
+
+<main role="main">
+	<div class="container">
+		<!-- <h2>Sneha</h2> -->
+
+	<br/>
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: "Status",
+            colorByPoint: true,
+            data: [{
+                name: "Reachable",
+                y: 55.6,
+                selected: true
+            }, {
+                name: "Unreachable",
+                y: 24.030000000000005
+                // sliced: true
+            }]
+        }]
+    });
+});
+</script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+<br/>
+<h4 class="text-center">Target List</h4>
+
+
+
+<div class="wice-grid-container" data-grid-name="grid" id="grid"><div id="grid_title"></div><table  class="table-striped table-bordered table wice-grid"><thead><tr  class="wice-grid-title-row"><th class=""><a href="?grid%5Border%5D=targets.hostname&amp;grid%5Border_direction%5D=asc">Hostname</a></th><th class=""><a href="?grid%5Border%5D=targets.address&amp;grid%5Border_direction%5D=asc">Address</a></th><th class=""><a href="?grid%5Border%5D=appliances.name&amp;grid%5Border_direction%5D=asc">Appliance</a></th><th></th></tr><tr  class="wg-filter-row" id="grid_filter_row" ><th class=""><input class="form-control input-sm " id="grid_f_targets_hostname" name="grid[f][targets.hostname]" size="8" type="text" value="" /></th><th class=""><input class="form-control input-sm " id="grid_f_targets_address" name="grid[f][targets.address]" size="8" type="text" value="" /></th><th class=""><input class="form-control input-sm " id="grid_f_appliances_name" name="grid[f][appliances.name]" size="8" type="text" value="" /></th><th class="filter_icons"><div class="submit clickable" id="grid_submit_grid_icon" title="Filter"></div> </th></tr></thead><tfoot><tr><td colspan="3">
+  <div class="pagination">
+    <ul class="pagination">
+          <li class="active"><a href="/?grid%5Bpage%5D=">1</a></li>
+
+          <li ><a href="/?grid%5Bpage%5D=2" rel="next">2</a></li>
+
+          <li ><a href="/?grid%5Bpage%5D=3">3</a></li>
+
+          <li ><a href="/?grid%5Bpage%5D=4">4</a></li>
+
+          <li ><a href="/?grid%5Bpage%5D=5">5</a></li>
+
+          <li class="disabled"><a href="#">...</a></li>
+
+          <li ><a href="/?grid%5Bpage%5D=263">263</a></li>
+
+          <li ><a href="/?grid%5Bpage%5D=264">264</a></li>
+
+        <li><a href="/?grid%5Bpage%5D=2" rel="next">»</a></li>
+
+    </ul>
+  </div>
+ <div class="pagination_status">1-10 / 2640 <a class="wg-show-all-link" data-confim-message="Are you sure you want to display all records?" data-grid-state="[[&quot;grid[order]&quot;,&quot;hostname&quot;],[&quot;grid[order_direction]&quot;,&quot;asc&quot;],[&quot;grid[pp]&quot;,2640]]" href="#" title="Show all records">show all</a></div></td><td><div class="clickable export-to-csv-button" title="Export to CSV"></div></td></tr></tfoot><tbody><tr  class="odd"><td>10030-rosenbaum.net</td><td>5.245.205.38</td><td>65388-bartell.org</td><td></td></tr><tr  class="even"><td>10115-runolfsdottir.com</td><td>107.16.77.248</td><td>8657-stokes.org</td><td></td></tr><tr  class="odd"><td>10129-stamm.org</td><td>134.247.31.244</td><td>91119-jast.name</td><td></td></tr><tr  class="even"><td>10166-dachbayer.name</td><td>111.140.118.212</td><td>5270-veum.com</td><td></td></tr><tr  class="odd"><td>1017-lindgren.biz</td><td>242.93.209.195</td><td>99108-nikolaus.biz</td><td></td></tr><tr  class="even"><td>10323-binsdonnelly.info</td><td>66.245.163.104</td><td>54311-mohrlang.info</td><td></td></tr><tr  class="odd"><td>10375-heller.org</td><td>51.28.173.112</td><td>19443-aufderhar.biz</td><td></td></tr><tr  class="even"><td>10433-roob.net</td><td>57.58.14.200</td><td>75510-marquardtkihn.net</td><td></td></tr><tr  class="odd"><td>10461-schmeler.info</td><td>208.29.153.235</td><td>69350-wisozk.com</td><td></td></tr><tr  class="even"><td>10514-eichmann.biz</td><td>199.198.98.39</td><td>58136-wiegand.biz</td><td></td></tr></tbody></table><div class="wg-data" data-filter-declarations="[{&quot;filterName&quot;:&quot;Hostname&quot;,&quot;detached&quot;:&quot;false&quot;,&quot;declaration&quot;:{&quot;templates&quot;:[&quot;grid%5Bf%5D%5Btargets.hostname%5D=&quot;],&quot;ids&quot;:[&quot;grid_f_targets_hostname&quot;]}},{&quot;filterName&quot;:&quot;Address&quot;,&quot;detached&quot;:&quot;false&quot;,&quot;declaration&quot;:{&quot;templates&quot;:[&quot;grid%5Bf%5D%5Btargets.address%5D=&quot;],&quot;ids&quot;:[&quot;grid_f_targets_address&quot;]}},{&quot;filterName&quot;:&quot;Appliance&quot;,&quot;detached&quot;:&quot;false&quot;,&quot;declaration&quot;:{&quot;templates&quot;:[&quot;grid%5Bf%5D%5Bappliances.name%5D=&quot;],&quot;ids&quot;:[&quot;grid_f_appliances_name&quot;]}}]" data-processor-initializer-arguments="[&quot;http://localhost:3000/&quot;,&quot;http://localhost:3000/&quot;,&quot;http://localhost:3000/?grid%5Bexport%5D=csv&quot;,&quot;grid%5Bq%5D=&quot;,&quot;grid%5Bfoc%5D=&quot;,&quot;development&quot;]"></div></div><script>
+//<![CDATA[
+ $(document).ready(function(){ 
+ if (typeof(WiceGridProcessor) == "undefined"){
+   alert("wice_grid.js not loaded, WiceGrid cannot proceed!\n" +
+     "Make sure that you have loaded wice_grid.js.\n" +
+     "Add line\n//= require wice_grid.js\n" +
+     "to app/assets/javascripts/application.js")
+ }
+ }) 
+//]]>
+</script>
+
+<!-- <table class="datatable table table-bordered">
+    <thead>
+	<tr>
+		<th>Hostname</th>
+		<th>Address</th>
+		<th>Appliance</th>
+	</tr>
+</thead>
+
+<tbody>
+
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+</tbody>
+</table>
+ -->
+
+	</div>
+</main>
+</body>
+</html>

@@ -1,4 +1,6 @@
+require 'resolv'
 class Target < ActiveRecord::Base
+  
   belongs_to :appliance
 
   validates :appliance_id, presence:   true
